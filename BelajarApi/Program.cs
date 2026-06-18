@@ -56,7 +56,7 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("AdminOnly", policy =>
-        policy.RequireRole("Admin"));
+        policy.RequireRole("Admin", "Super Admin"));
 });
 
 builder.Services.AddScoped<
@@ -66,7 +66,19 @@ builder.Services.AddScoped<
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactApp", policy =>
+    {
+        policy
+            .WithOrigins("http://localhost:5173")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+
 var app = builder.Build();
+app.UseCors("AllowReactApp");
 
 app.UseMiddleware<GlobalExceptionMiddleware>();
 
@@ -100,5 +112,6 @@ app.MapGet("/error-test", () =>
 });
 
 app.MapAuditLogEndpoints();
+app.MapDashboardEndpoints();
 
 app.Run();

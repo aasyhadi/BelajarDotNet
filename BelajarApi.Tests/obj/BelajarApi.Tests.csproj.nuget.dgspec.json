@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\5. Belajar\\16. BelajarDotNet\\BelajarDotNet\\BelajarApi.Tests\\BelajarApi.Tests.csproj": {}
+    "D:\\5. Belajar\\16. BelajarDotNet\\BelajarDotNet\\belajarapi.tests\\BelajarApi.Tests.csproj": {}
   },
   "projects": {
-    "D:\\5. Belajar\\16. BelajarDotNet\\BelajarDotNet\\BelajarApi.Tests\\BelajarApi.Tests.csproj": {
+    "D:\\5. Belajar\\16. BelajarDotNet\\BelajarDotNet\\belajarapi.tests\\BelajarApi.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\5. Belajar\\16. BelajarDotNet\\BelajarDotNet\\BelajarApi.Tests\\BelajarApi.Tests.csproj",
+        "projectUniqueName": "D:\\5. Belajar\\16. BelajarDotNet\\BelajarDotNet\\belajarapi.tests\\BelajarApi.Tests.csproj",
         "projectName": "BelajarApi.Tests",
-        "projectPath": "D:\\5. Belajar\\16. BelajarDotNet\\BelajarDotNet\\BelajarApi.Tests\\BelajarApi.Tests.csproj",
+        "projectPath": "D:\\5. Belajar\\16. BelajarDotNet\\BelajarDotNet\\belajarapi.tests\\BelajarApi.Tests.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\5. Belajar\\16. BelajarDotNet\\BelajarDotNet\\BelajarApi.Tests\\obj\\",
+        "outputPath": "D:\\5. Belajar\\16. BelajarDotNet\\BelajarDotNet\\belajarapi.tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -160,6 +160,18 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[9.0.0, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[10.0.0, )"
+            },
+            "Serilog.Sinks.Console": {
+              "target": "Package",
+              "version": "[6.1.1, )"
+            },
+            "Serilog.Sinks.File": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
