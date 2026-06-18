@@ -14,4 +14,7 @@ public class Mahasiswa
 
     public ICollection<MataKuliah> MataKuliahs { get; set; }
         = new List<MataKuliah>();
+    
+    public ICollection<Krs> KrsList { get; set;}
+        = new List<Krs>();
 }

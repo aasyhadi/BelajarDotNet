@@ -11,4 +11,7 @@ public class MataKuliah
     public int MahasiswaId { get; set; }
 
     public Mahasiswa? Mahasiswa { get; set; }
+
+    public ICollection<Krs> KrsList { get; set; }
+        = new List<Krs>();
 }

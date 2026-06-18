@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BelajarApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b7f541834f4577926375397a60b19dbb1574529f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ac57728363f447aeed40eec007a226109e503343")]
 [assembly: System.Reflection.AssemblyProductAttribute("BelajarApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BelajarApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

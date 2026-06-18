@@ -1,5 +1,6 @@
 using BelajarApi.Data;
 using BelajarApi.Dtos;
+using BelajarApi.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace BelajarApi.Endpoints;
@@ -10,6 +11,15 @@ public static class DashboardEndpoint
     {
         app.MapGet("/dashboard", async (AppDbContext db) =>
         {
+            var krsData = await db.Set<Krs>()
+                .Include(x => x.MataKuliah)
+                .ToListAsync();
+
+            var favoriteCourse = krsData
+                .GroupBy(x => x.MataKuliah.NamaMataKuliah)
+                .OrderByDescending(x => x.Count())
+                .FirstOrDefault();
+
             var data = new DashboardResponseDto
             {
                 TotalMahasiswa = await db.Mahasiswas
@@ -23,7 +33,13 @@ public static class DashboardEndpoint
                     .CountAsync(),
 
                 TotalAuditLog = await db.AuditLogs
-                    .CountAsync()
+                    .CountAsync(),
+
+                TotalKrs = krsData.Count,
+
+                MataKuliahTerfavorit = favoriteCourse?.Key ?? "-",
+
+                JumlahPeminat = favoriteCourse?.Count() ?? 0
             };
 
             return Results.Ok(new ApiResponse<DashboardResponseDto>
