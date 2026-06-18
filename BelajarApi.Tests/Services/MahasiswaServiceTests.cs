@@ -1,11 +1,11 @@
 using AutoMapper;
 using BelajarApi.Dtos;
+using BelajarApi.Models;
 using BelajarApi.Repositories;
 using BelajarApi.Services;
 using FluentAssertions;
 using Moq;
 using Xunit;
-using BelajarApi.Models;
 
 namespace BelajarApi.Tests.Services;
 
@@ -236,4 +236,5 @@ public class MahasiswaServiceTests
         result.Success.Should().BeFalse();
         result.Message.Should().Be("Data mahasiswa tidak ditemukan");
     }
+
 }
